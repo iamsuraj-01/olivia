@@ -383,7 +383,7 @@
 
     })();
 
-    // Book a session modal
+    // Book a session modal 
     const modal = document.getElementById("bookSessionModal");
     const btn = document.getElementById("bookSessionBtn");
     const span = document.getElementsByClassName("close")[0];
