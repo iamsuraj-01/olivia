@@ -4351,6 +4351,13 @@ td:last-child {
 
 .s-footer__address {
     list-style: none; /* Removes default bullets */
+	margin-left: 0!important;
+}
+.s-footer__address i {
+    color: var(--color-btn-primary);
+}
+.s-footer__address a {
+	color: rgba(255, 255, 255, 0.6);
 }
 
 /* ------------------------------------------------------------------- 
