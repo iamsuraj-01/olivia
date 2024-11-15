@@ -3948,7 +3948,7 @@ td:last-child {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     background-color: rgba(0, 0, 0, 0.4); /* Overlay background */
-    overflow: auto;
+    /* overflow: auto; */ 
     justify-content: center;
     align-items: center;
     display: flex;

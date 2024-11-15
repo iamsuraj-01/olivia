@@ -384,106 +384,106 @@
     })();
 
     // Book a session modal (menu button)
-const modal = document.getElementById("bookSessionModal");
-const btn = document.getElementById("bookSessionBtn");
-const span = document.getElementsByClassName("close")[0];
+    const modal = document.getElementById("bookSessionModal");
+    const btn = document.getElementById("bookSessionBtn");
+    const span = document.getElementsByClassName("close")[0];
 
-// Second modal (CTA button)
-const modal2 = document.getElementById("ctaModal");
-const btn2 = document.getElementById("bookSessionCtaBtn");
-const span2 = modal2.querySelector(".close");
+    // Ensure both modals are hidden initially on page load
+    window.onload = function() {
+        modal.style.display = "none";  // Hide the first modal
+        modal2.style.display = "none"; // Hide the second modal
+    };
 
-// Ensure both modals are hidden initially on page load
-window.onload = function() {
-    modal.style.display = "none";  // Hide the first modal
-    modal2.style.display = "none"; // Hide the second modal
-};
+    // When the user clicks the first button, open the first modal
+    btn.onclick = function() {
+        modal.style.display = "flex"; // Show the first modal with flexbox
+    };
 
-// When the user clicks the first button, open the first modal
-btn.onclick = function() {
-    modal.style.display = "flex"; // Show the first modal with flexbox
-};
+    // When the user clicks the close button on the first modal, close it
+    span.onclick = function() {
+        modal.style.display = "none"; // Close the first modal
+    };
 
-// When the user clicks the close button on the first modal, close it
-span.onclick = function() {
-    modal.style.display = "none"; // Close the first modal
-};
+    // When the user clicks outside the first modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none"; // Close the first modal when clicking outside
+        }
+    };
 
-// When the user clicks outside the first modal, close it
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none"; // Close the first modal when clicking outside
-    }
-};
+    // Form submission handling for the first modal
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
 
-// Form submission handling for the first modal
-document.getElementById("bookingForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
+        const fullName = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const userMessage = document.getElementById("message").value;
 
-    const fullName = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const userMessage = document.getElementById("message").value;
+        const message = `Hello, I would like to book a session.\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${userMessage}`;
 
-    const message = `Hello, I would like to book a session.\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${userMessage}`;
+        // Detect if the user is on mobile or desktop
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    // Detect if the user is on mobile or desktop
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const whatsappUrl = isMobile 
+            ? `https://wa.me/916395525749?text=${encodeURIComponent(message)}`
+            : `https://web.whatsapp.com/send?phone=916395525749&text=${encodeURIComponent(message)}`;
 
-    const whatsappUrl = isMobile 
-        ? `https://wa.me/916395525749?text=${encodeURIComponent(message)}`
-        : `https://web.whatsapp.com/send?phone=916395525749&text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
 
-    window.open(whatsappUrl, '_blank');
+        // Close the first modal
+        modal.style.display = "none";
 
-    // Close the first modal
-    modal.style.display = "none";
+        alert("Thank you for booking! We will get in touch with you shortly.");
+    });
 
-    alert("Thank you for booking! We will get in touch with you shortly.");
-});
+    // Second modal (CTA button)
+    const modal2 = document.getElementById("ctaModal");
+    const btn2 = document.getElementById("bookSessionCtaBtn");
+    const span2 = modal2.querySelector(".close");
 
-// When the user clicks the second button, open the second modal
-btn2.onclick = function() {
-    modal2.style.display = "flex"; // Show the second modal with flexbox
-};
+    // When the user clicks the second button, open the second modal
+    btn2.onclick = function() {
+        modal2.style.display = "flex"; // Show the second modal with flexbox
+    };
 
-// When the user clicks the close button on the second modal, close it
-span2.onclick = function() {
-    modal2.style.display = "none"; // Close the second modal
-};
+    // When the user clicks the close button on the second modal, close it
+    span2.onclick = function() {
+        modal2.style.display = "none"; // Close the second modal
+    };
 
-// When the user clicks outside the second modal, close it
-window.onclick = function(event) {
-    if (event.target === modal2) {
-        modal2.style.display = "none"; // Close the second modal when clicking outside
-    }
-};
+    // When the user clicks outside the second modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal2) {
+            modal2.style.display = "none"; // Close the second modal when clicking outside
+        }
+    };
 
-// Form submission handling for the second modal
-document.getElementById("ctaBookingForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
+    // Form submission handling for the second modal
+    document.getElementById("ctaBookingForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
 
-    const fullName = document.getElementById("ctaFullName").value;
-    const email = document.getElementById("ctaEmail").value;
-    const phone = document.getElementById("ctaPhone").value;
-    const userMessage = document.getElementById("ctaMessage").value;
+        const fullName = document.getElementById("ctaFullName").value;
+        const email = document.getElementById("ctaEmail").value;
+        const phone = document.getElementById("ctaPhone").value;
+        const userMessage = document.getElementById("ctaMessage").value;
 
-    const message = `Hello, I would like to book a free session.\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${userMessage}`;
+        const message = `Hello, I would like to book a free session.\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${userMessage}`;
 
-    // Detect if the user is on mobile or desktop
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        // Detect if the user is on mobile or desktop
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    const whatsappUrl = isMobile 
-        ? `https://wa.me/916395525749?text=${encodeURIComponent(message)}`
-        : `https://web.whatsapp.com/send?phone=916395525749&text=${encodeURIComponent(message)}`;
+        const whatsappUrl = isMobile 
+            ? `https://wa.me/916395525749?text=${encodeURIComponent(message)}`
+            : `https://web.whatsapp.com/send?phone=916395525749&text=${encodeURIComponent(message)}`;
 
-    window.open(whatsappUrl, '_blank');
+        window.open(whatsappUrl, '_blank');
 
-    // Close the second modal
-    modal2.style.display = "none";
+        // Close the second modal
+        modal2.style.display = "none";
 
-    alert("Thank you for booking! We will get in touch with you shortly.");
-});
+        alert("Thank you for booking! We will get in touch with you shortly.");
+    });
 
 
 })(document.documentElement);
