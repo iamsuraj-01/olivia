@@ -384,58 +384,56 @@
     })();
 
     // Book a session modal
-    // Book a session modal
-const modal = document.getElementById("bookSessionModal");
-const btn = document.getElementById("bookSessionBtn");
-const span = document.getElementsByClassName("close")[0];
+    const modal = document.getElementById("bookSessionModal");
+    const btn = document.getElementById("bookSessionBtn");
+    const span = document.getElementsByClassName("close")[0];
 
-// Ensure modal is hidden initially using CSS by default
-document.addEventListener("DOMContentLoaded", function() {
-    modal.style.display = "none"; // Ensure modal is hidden when the page is fully loaded
-});
+    // Ensure modal is hidden initially
+    window.onload = function() {
+        modal.style.display = "none"; // Hide modal on page load
+    };
 
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "flex"; // Show the modal with flexbox
-}
-
-// When the user clicks on the close button, close the modal
-span.onclick = function() {
-    modal.style.display = "none"; // Close the modal
-}
-
-// When the user clicks outside the modal, close it
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none"; // Close the modal when clicking outside
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "flex"; // Show the modal with flexbox
     }
-}
 
-// Form submission handling
-document.getElementById("bookingForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
+    // When the user clicks on the close button, close the modal
+    span.onclick = function() {
+        modal.style.display = "none"; // Close the modal
+    }
 
-    const fullName = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const userMessage = document.getElementById("message").value;
+    // When the user clicks outside the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none"; // Close the modal when clicking outside
+        }
+    }
 
-    const message = `Hello, I would like to book a session.\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${userMessage}`;
+    // Form submission handling
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
 
-    // Detect if the user is on mobile or desktop
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const fullName = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const userMessage = document.getElementById("message").value;
 
-    const whatsappUrl = isMobile 
-        ? `https://wa.me/916395525749?text=${encodeURIComponent(message)}`
-        : `https://web.whatsapp.com/send?phone=916395525749&text=${encodeURIComponent(message)}`;
+        const message = `Hello, I would like to book a session.\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${userMessage}`;
 
-    window.open(whatsappUrl, '_blank');
+        // Detect if the user is on mobile or desktop
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    // Close the modal
-    modal.style.display = "none";
+        const whatsappUrl = isMobile 
+            ? `https://wa.me/916395525749?text=${encodeURIComponent(message)}`
+            : `https://web.whatsapp.com/send?phone=916395525749&text=${encodeURIComponent(message)}`;
 
-    alert("Thank you for booking! We will get in touch with you shortly.");
-});
+        window.open(whatsappUrl, '_blank');
 
+        // Close the modal
+        modal.style.display = "none";
+
+        alert("Thank you for booking! We will get in touch with you shortly.");
+    });
 
 })(document.documentElement);
