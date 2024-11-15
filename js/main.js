@@ -388,6 +388,11 @@
     const btn = document.getElementById("bookSessionBtn");
     const span = document.getElementsByClassName("close")[0];
 
+    // Second modal (CTA button)
+    const modal2 = document.getElementById("ctaModal");
+    const btn2 = document.getElementById("bookSessionCtaBtn");
+    const span2 = modal2.querySelector(".close");
+
     // Ensure both modals are hidden initially on page load
     window.onload = function() {
         modal.style.display = "none";  // Hide the first modal
@@ -436,11 +441,6 @@
 
         alert("Thank you for booking! We will get in touch with you shortly.");
     });
-
-    // Second modal (CTA button)
-    const modal2 = document.getElementById("ctaModal");
-    const btn2 = document.getElementById("bookSessionCtaBtn");
-    const span2 = modal2.querySelector(".close");
 
     // When the user clicks the second button, open the second modal
     btn2.onclick = function() {
