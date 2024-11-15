@@ -383,40 +383,34 @@
 
     })();
 
-    // Book a session modal (menu button)
+    // book a session modal (menu button)
     const modal = document.getElementById("bookSessionModal");
     const btn = document.getElementById("bookSessionBtn");
     const span = document.getElementsByClassName("close")[0];
 
-    // Second modal (CTA button)
-    const modal2 = document.getElementById("ctaModal");
-    const btn2 = document.getElementById("bookSessionCtaBtn");
-    const span2 = modal2.querySelector(".close");
-
-    // Ensure both modals are hidden initially on page load
+    // Ensure modal is hidden initially
     window.onload = function() {
-        modal.style.display = "none";  // Hide the first modal
-        modal2.style.display = "none"; // Hide the second modal
+        modal.style.display = "none"; // Hide modal on page load
     };
 
-    // When the user clicks the first button, open the first modal
+    // When the user clicks the button, open the modal
     btn.onclick = function() {
-        modal.style.display = "flex"; // Show the first modal with flexbox
-    };
+        modal.style.display = "flex"; // Show the modal with flexbox
+    }
 
-    // When the user clicks the close button on the first modal, close it
+    // When the user clicks on the close button, close the modal
     span.onclick = function() {
-        modal.style.display = "none"; // Close the first modal
-    };
+        modal.style.display = "none"; // Close the modal
+    }
 
-    // When the user clicks outside the first modal, close it
+    // When the user clicks outside the modal, close it
     window.onclick = function(event) {
         if (event.target === modal) {
-            modal.style.display = "none"; // Close the first modal when clicking outside
+            modal.style.display = "none"; // Close the modal when clicking outside
         }
-    };
+    }
 
-    // Form submission handling for the first modal
+    // Form submission handling
     document.getElementById("bookingForm").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
 
@@ -436,23 +430,34 @@
 
         window.open(whatsappUrl, '_blank');
 
-        // Close the first modal
+        // Close the modal
         modal.style.display = "none";
 
         alert("Thank you for booking! We will get in touch with you shortly.");
     });
 
-    // When the user clicks the second button, open the second modal
+
+    // Second modal (CTA button)
+    const modal2 = document.getElementById("ctaModal");
+    const btn2 = document.getElementById("bookSessionCtaBtn");
+    const span2 = modal2.querySelector(".close");
+
+    // Ensure second modal is hidden initially
+    window.onload = function() {
+        modal2.style.display = "none"; // Hide second modal on page load
+    };
+
+    // When the user clicks the button, open the modal
     btn2.onclick = function() {
         modal2.style.display = "flex"; // Show the second modal with flexbox
     };
 
-    // When the user clicks the close button on the second modal, close it
+    // When the user clicks on the close button, close the modal
     span2.onclick = function() {
         modal2.style.display = "none"; // Close the second modal
     };
 
-    // When the user clicks outside the second modal, close it
+    // When the user clicks outside the modal, close it
     window.onclick = function(event) {
         if (event.target === modal2) {
             modal2.style.display = "none"; // Close the second modal when clicking outside
@@ -479,11 +484,10 @@
 
         window.open(whatsappUrl, '_blank');
 
-        // Close the second modal
+        // Close the modal
         modal2.style.display = "none";
 
         alert("Thank you for booking! We will get in touch with you shortly.");
     });
-
 
 })(document.documentElement);
