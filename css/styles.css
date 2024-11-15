@@ -3939,6 +3939,11 @@ td:last-child {
  *
  *
  * ------------------------------------------------------------------- */
+
+ #bookSessionModal {
+    display: none; /* Ensure the modal is hidden on page load */
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
