@@ -383,4 +383,63 @@
 
     })();
 
+    // Book a session modal
+    const modal = document.getElementById("bookSessionModal");
+    const btn = document.getElementById("bookSessionBtn");
+    const ctaBtn = document.getElementById("bookSessionCtaBtn"); // New button
+    const span = document.getElementsByClassName("close")[0];
+
+    // Ensure modal is hidden initially
+    window.onload = function() {
+        modal.style.display = "none"; // Hide modal on page load
+    };
+
+    // When the user clicks the buttons, open the modal
+    btn.onclick = function() {
+        modal.style.display = "flex"; // Show the modal with flexbox
+    };
+
+    ctaBtn.onclick = function() {
+        modal.style.display = "flex"; // Show the modal with flexbox
+    };
+
+    // When the user clicks on the close button, close the modal
+    span.onclick = function() {
+        modal.style.display = "none"; // Close the modal
+    };
+
+    // When the user clicks outside the modal, close it
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none"; // Close the modal when clicking outside
+        }
+    };
+
+    // Form submission handling
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const fullName = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const userMessage = document.getElementById("message").value;
+
+        const message = `Hello, I would like to book a session.\nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${userMessage}`;
+
+        // Detect if the user is on mobile or desktop
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        const whatsappUrl = isMobile 
+            ? `https://wa.me/916395525749?text=${encodeURIComponent(message)}`
+            : `https://web.whatsapp.com/send?phone=916395525749&text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappUrl, '_blank');
+
+        // Close the modal
+        modal.style.display = "none";
+
+        alert("Thank you for booking! We will get in touch with you shortly.");
+    });
+
+
 })(document.documentElement);
