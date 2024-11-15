@@ -74,39 +74,8 @@
                     </ul> <!-- s-header__menu-links -->
 
                     <div class="s-header__contact">
-                        <button id="bookSessionBtn" class="btn btn--primary s-header__contact-btn">Book a Session</a>                        
+                        <a href="#" class="btn btn--primary s-header__contact-btn">Contact Us</a>                        
                     </div> <!-- s-header__contact -->
-
-                    <!-- Modal Structure -->
-                    <div id="bookSessionModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h3>Book a Session</h3>
-                            <form id="bookingForm">
-                                <div class="form-group">
-                                    <label for="fullName">Full Name</label>
-                                    <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="message">Your Message</label>
-                                    <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
-                                </div>
-
-                                <button type="submit" class="btn btn--stroke u-fullwidth">Submit</button>
-                            </form>
-                        </div>
-                    </div>
     
                 </nav> <!-- end s-header__nav -->
 
@@ -326,7 +295,40 @@
 
                             Whether you're feeling overwhelmed, stuck, or simply seeking greater clarity and peace, I am here to support you on your journey. Let’s connect and discover how we can work together to bring more balance and joy into your life.
                         </p>
-                        <button id="bookSessionCtaBtn" class="btn btn--primary">Book Your Free Session Now</button>
+                        
+                        <button id="bookSessionBtn" class="btn btn--primary">Book Your Free Session Now</button>
+
+                        <!-- Modal Structure -->
+                        <div id="bookSessionModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h3>Book a Session</h3>
+                                <form id="bookingForm">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name</label>
+                                        <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message">Your Message</label>
+                                        <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn--stroke u-fullwidth">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                        
                     </div>
 
                 </div>

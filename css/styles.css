@@ -3999,12 +3999,13 @@ td:last-child {
     color: #333;
     display: block;
     margin-bottom: 0.5rem;
+	text-align: left;
 }
 
 .modal .form-group input,
 .modal .form-group textarea {
     width: 100%;
-    padding: 0.25rem;
+    padding: 0.75rem;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -4024,6 +4025,7 @@ td:last-child {
 .modal .form-group textarea {
     min-height: 100px; /* Default height for the textarea */
     line-height: 1.5; /* Better readability for multiline text */
+	padding: 10px;
 }
 
 /* Optional Additional Styling */
@@ -4037,7 +4039,7 @@ td:last-child {
 .modal .form-group textarea::placeholder {
     color: #aaa; /* Placeholder text color */
     font-style: bold; /* Placeholder style */
-	padding: 10px;
+	padding: 5px;
 }
 
 
