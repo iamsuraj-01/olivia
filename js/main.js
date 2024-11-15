@@ -383,7 +383,7 @@
 
     })();
 
-    // book a session modal (menu button)
+    // Get modal and button
     const modal = document.getElementById("bookSessionModal");
     const btn = document.getElementById("bookSessionBtn");
     const span = document.getElementsByClassName("close")[0];
@@ -435,6 +435,5 @@
 
         alert("Thank you for booking! We will get in touch with you shortly.");
     });
-
 
 })(document.documentElement);
