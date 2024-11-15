@@ -4030,6 +4030,29 @@ td:last-child {
 	}
 }
 
+/* New class for the slider */
+.expertise-slider {
+    display: flex;
+    overflow: hidden;
+}
+
+/* Slick Slider specific styles */
+.expertise-slider .grid-list-items__item {
+    margin: 0 10px; /* Optional: Adjust spacing between slides */
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 800px) {
+    .expertise-slider {
+        display: block; /* Stack the slides vertically on small screens */
+    }
+
+    .expertise-slider .grid-list-items__item {
+        margin-bottom: 20px; /* Adjust spacing for mobile */
+    }
+}
+
+
 
 
 /* ===================================================================
