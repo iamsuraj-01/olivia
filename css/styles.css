@@ -4004,7 +4004,7 @@ td:last-child {
     color: #333;
     display: block;
     margin-bottom: 0.5rem;
-	text-align: left;
+	text-align: left!important;
 }
 
 .modal .form-group input,
