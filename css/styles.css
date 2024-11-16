@@ -2935,11 +2935,6 @@ td:last-child {
 	padding-bottom: var(--vspace-2_5);
 }
 
-.testimonials__slider p {
-	text-align: justify;
-	hyphens: auto;
-}
-
 .testimonials__author {
 	display      : inline-block;
 	min-height   : var(--vspace-2);
@@ -4097,9 +4092,6 @@ td:last-child {
 .s-about__content-main .attention-getter,
 .s-about__content-main .lead {
 	font-weight: 300;
-	text-align: justify;
-	hyphens: auto; /* Enables automatic hyphenation */
-	word-wrap: break-word; /* Prevents overflow issues */
 }
 
 .about-section-image {
@@ -4149,11 +4141,6 @@ td:last-child {
 .s-expertise {
 	padding-top   : var(--vspace-6);
 	padding-bottom: var(--vspace-5);
-}
-
-.s-expertise .section-header .lead {
-	text-align: justify;
-	hyphens: auto;
 }
 
 .s-expertise__content-main {
@@ -4319,11 +4306,6 @@ td:last-child {
 	padding-bottom  : var(--vspace-3_5);
 	background-color: var(--color-2-dark);
 	color           : var(--color-3);
-}
-
-.s-cta .lead {
-	text-align: justify;
-	text-align-last: center;
 }
 
 .s-cta .text-pretitle {
