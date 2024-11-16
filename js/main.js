@@ -383,7 +383,7 @@
 
     })();
 
-    // Get the button element
+    //  Book a session 
     const btn = document.getElementById("bookSessionBtn");
 
     // Define the message and WhatsApp number
@@ -397,17 +397,12 @@
 
         // Construct the WhatsApp URL based on the device type
         const whatsappUrl = isMobile 
-            ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}` // Mobile-friendly link
-            : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`; // Desktop link
+            ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+            : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
 
         // Redirect the user to the WhatsApp URL
-        if (isMobile) {
-            window.location.href = whatsappUrl; // Mobile-friendly redirection
-        } else {
-            window.open(whatsappUrl, "_blank"); // Open in a new tab for desktop
-        }
+        window.open(whatsappUrl, "_blank");
     });
-
 
 
     /*  Book a session modal 
