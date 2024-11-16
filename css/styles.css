@@ -2935,6 +2935,11 @@ td:last-child {
 	padding-bottom: var(--vspace-2_5);
 }
 
+.testimonials__slider p {
+	text-align: justify;
+	hyphens: auto;
+}
+
 .testimonials__author {
 	display      : inline-block;
 	min-height   : var(--vspace-2);
@@ -4093,6 +4098,8 @@ td:last-child {
 .s-about__content-main .lead {
 	font-weight: 300;
 	text-align: justify;
+	hyphens: auto; /* Enables automatic hyphenation */
+	word-wrap: break-word; /* Prevents overflow issues */
 }
 
 .about-section-image {
@@ -4146,6 +4153,7 @@ td:last-child {
 
 .s-expertise .section-header .lead {
 	text-align: justify;
+	hyphens: auto;
 }
 
 .s-expertise__content-main {
