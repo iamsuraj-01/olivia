@@ -383,26 +383,32 @@
 
     })();
 
-    //  Book a session 
-    const btn = document.getElementById("bookSessionBtn");
-
     // Define the message and WhatsApp number
-    const message = "Hello, I would like to book a session.";
-    const whatsappNumber = "916395525749"; // Replace this with your WhatsApp number
+const message = "Hello, I would like to book a session.";
+const whatsappNumber = "916395525749"; // Replace this with your WhatsApp number
 
-    // Add an event listener to the button
-    btn.addEventListener("click", () => {
-        // Detect if the user is on mobile or desktop
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// Reusable function to redirect to WhatsApp
+function redirectToWhatsApp() {
+    // Detect if the user is on mobile or desktop
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        // Construct the WhatsApp URL based on the device type
-        const whatsappUrl = isMobile 
-            ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
-            : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+    // Construct the WhatsApp URL based on the device type
+    const whatsappUrl = isMobile 
+        ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+        : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
 
-        // Redirect the user to the WhatsApp URL
-        window.open(whatsappUrl, "_blank");
-    });
+    // Redirect the user to the WhatsApp URL
+    window.open(whatsappUrl, "_blank");
+}
+
+// Get the buttons
+const btn = document.getElementById("bookSessionBtn");
+const btnSecond = document.getElementById("bookSessionBtnSecond");
+
+// Add event listeners to the buttons
+if (btn) btn.addEventListener("click", redirectToWhatsApp);
+if (btnSecond) btnSecond.addEventListener("click", redirectToWhatsApp);
+
 
 
     /*  Book a session modal 
